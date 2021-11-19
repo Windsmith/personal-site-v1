@@ -1,4 +1,4 @@
-<div class="hero z-10">
+<div class="hero z-10 mb-20">
 	<div class="hero-content text-center">
 		<div>
 			<h1 class="font-bold text-gray-900 text-5xl mx-auto font-worksans mx-10 xl:text-7xl">
