@@ -31,14 +31,14 @@
 			</p>
 			<div>
 				<a
-					class="btn font-worksans mr-8 bg-gray-900 text-base md:text-2xl 2xl:text-4xl"
+					class="btn font-worksans mr-8 bg-gray-900 text-base md:text-2xl 2xl:text-4xl shadow-xl"
 					href="https://blog.shriramsekar.tech"
 					target="_blank"
 					rel="noopener noreferrer"
 					>Blog
 				</a>
 				<a
-					class="btn font-worksans bg-gray-900 text-base md:text-2xl 2xl:text-4xl"
+					class="btn font-worksans bg-gray-900 text-base md:text-2xl 2xl:text-4xl shadow-xl"
 					href="https://github.com/Windsmith"
 					target="_blank"
 					rel="noopener noreferrer"
