@@ -116,7 +116,7 @@
 	};
 </script>
 
-<body class="bg-gray-100 h-screen w-screen z-50 grid place-items-center">
+<div class="z-50 grid bg-gray-100 place-items-center min-h-screen min-w-screen">
 	<Particles
 		id="tsparticles"
 		options={particlesConfig}
@@ -126,4 +126,4 @@
 	/>
 
 	<slot />
-</body>
+</div>
