@@ -116,7 +116,7 @@
 	};
 </script>
 
-<body class="bg-gray-100 h-screen w-screen z-50">
+<body class="bg-gray-100 h-screen w-screen z-50 grid place-items-center">
 	<Particles
 		id="tsparticles"
 		options={particlesConfig}

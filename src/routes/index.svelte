@@ -1,9 +1,7 @@
-<div class="hero my-auto z-10">
+<div class="hero z-10">
 	<div class="hero-content text-center">
 		<div>
-			<h1
-				class="font-bold text-gray-900 text-5xl mt-5 mx-auto font-worksans mx-10 xl:text-7xl xl:mt-20"
-			>
+			<h1 class="font-bold text-gray-900 text-5xl mx-auto font-worksans mx-10 xl:text-7xl">
 				Hi There!
 			</h1>
 			<h2 class="font-bold text-gray-900 text-5xl mb-5 font-worksans mx-2 xl:text-7xl">
