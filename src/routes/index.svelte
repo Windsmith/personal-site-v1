@@ -32,7 +32,7 @@
 			<div>
 				<a
 					class="btn font-worksans mr-8 bg-gray-900 text-base md:text-2xl 2xl:text-4xl"
-					href="https://hashnode.com/@windsmith"
+					href="https://blog.shriramsekar.tech"
 					target="_blank"
 					rel="noopener noreferrer"
 					>Blog
