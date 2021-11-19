@@ -17,14 +17,14 @@
 					href="https://hashnode.com/@windsmith"
 					target="_blank"
 					rel="noopener noreferrer"
-					>My Blog
+					>Blog
 				</a>
 				<a
 					class="btn font-worksans bg-gray-900 xl:text-xl"
 					href="https://github.com/Windsmith"
 					target="_blank"
 					rel="noopener noreferrer"
-					>My Github
+					>Github
 				</a>
 			</div>
 		</div>
