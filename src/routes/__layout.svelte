@@ -1,6 +1,21 @@
 <script>
+	import { onMount } from 'svelte';
 	import '../tailwind.css';
 	import Particles from 'svelte-particles';
+	import Icon from 'svelte-awesome';
+	import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+
+	const storageKey = 'user-theme';
+
+	let preference;
+	// Persist user preference
+	$: preference && localStorage.setItem(storageKey, JSON.stringify(preference));
+
+	function toggle() {
+		preference = preference === 'light' ? 'dark' : 'light';
+	}
+
+	// localStorage and window is only available in the browser
 
 	let particlesUrl = 'http://foo.bar/particles.json';
 
@@ -15,7 +30,7 @@
 				}
 			},
 			color: {
-				value: '#110000',
+				value: preference === 'dark' ? '#F3F4F6' : '#110000',
 				animation: {
 					enable: true,
 					speed: -0.0001,
@@ -104,6 +119,21 @@
 		}
 	};
 
+	onMount(() => {
+		preference = JSON.parse(localStorage.getItem(storageKey));
+		if (!preference) {
+			preference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+		}
+
+		window
+			.matchMedia('(prefers-color-scheme: dark)')
+			.addEventListener('change', ({ matches: isDark }) => {
+				preference = isDark ? 'dark' : 'light';
+			});
+	});
+
+	$: particlesConfig.particles.color.value = preference === 'dark' ? '#F3F4F6' : '#111827';
+
 	let onParticlesLoaded = (event) => {
 		const particlesContainer = event.detail.particles;
 		particlesContainer.play();
@@ -116,14 +146,23 @@
 	};
 </script>
 
-<div class="z-50 grid bg-gray-100 place-items-center min-h-screen min-w-screen">
-	<Particles
-		id="tsparticles"
-		options={particlesConfig}
-		on:particlesLoaded={onParticlesLoaded}
-		on:particlesInit={onParticlesInit}
-		class="z-0"
-	/>
+<div class={preference}>
+	<div class="z-50 grid bg-gray-100 dark:bg-zinc-900 place-items-center min-h-screen min-w-screen">
+		<Particles
+			id="tsparticles"
+			options={particlesConfig}
+			on:particlesLoaded={onParticlesLoaded}
+			on:particlesInit={onParticlesInit}
+			class="z-100"
+		/>
 
-	<slot />
+		<button
+			class="btn bg-zinc-900 dark:bg-gray-100 dark:text-zinc-900 font-worksans mr-4 mt-3 text-base md:text-2xl 2xl:text-4xl shadow-xl z-0 rounded-full m-auto"
+			on:click={toggle}
+		>
+			<Icon data={preference === 'dark' ? faSun : faMoon} scale="1.3" />
+		</button>
+
+		<slot />
+	</div>
 </div>
