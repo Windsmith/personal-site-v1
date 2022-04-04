@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import '../tailwind.css';
 	import Particles from 'svelte-particles';
-	import Icon from 'svelte-awesome';
+	import Icon from 'svelte-awesome/components/Icon.svelte';
 	import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 
 	const storageKey = 'user-theme';
