@@ -1,5 +1,5 @@
 <script>
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import '../tailwind.css';
 	import Particles from 'svelte-particles';
 	import Icon from 'svelte-awesome/components/Icon.svelte';
@@ -19,6 +19,19 @@
 	// localStorage and window is only available in the browser
 
 	let particlesUrl = 'http://foo.bar/particles.json';
+
+	onMount(() => {
+		preference = JSON.parse(localStorage.getItem(storageKey));
+		if (!preference) {
+			preference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+		}
+
+		window
+			.matchMedia('(prefers-color-scheme: dark)')
+			.addEventListener('change', ({ matches: isDark }) => {
+				preference = isDark ? 'dark' : 'light';
+			});
+	});
 
 	let particlesConfig = {
 		fpsLimit: 60,
@@ -120,20 +133,7 @@
 		}
 	};
 
-	onMount(() => {
-		preference = JSON.parse(localStorage.getItem(storageKey));
-		if (!preference) {
-			preference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-		}
-
-		window
-			.matchMedia('(prefers-color-scheme: dark)')
-			.addEventListener('change', ({ matches: isDark }) => {
-				preference = isDark ? 'dark' : 'light';
-			});
-	});
-
-	$: particlesConfig.particles.color.value = preference === 'dark' ? '#F3F4F6' : '#111827';
+	$: particlesConfig.particles.color.value = preference == 'dark' ? '#F3F4F6' : '#18181B';
 
 	let onParticlesLoaded = (event) => {
 		const particlesContainer = event.detail.particles;
@@ -149,13 +149,17 @@
 
 <div class={preference}>
 	<div class="z-50 grid bg-gray-100 dark:bg-zinc-900 place-items-center min-h-screen min-w-screen">
-		<Particles
-			id="tsparticles"
-			options={particlesConfig}
-			on:particlesLoaded={onParticlesLoaded}
-			on:particlesInit={onParticlesInit}
-			class="z-100"
-		/>
+		{#if preference}
+			<Particles
+				id="tsparticles"
+				options={particlesConfig}
+				on:particlesLoaded={onParticlesLoaded}
+				on:particlesInit={onParticlesInit}
+				class="z-100"
+			/>
+		{:else}
+			{(particlesConfig.particles.color.value = preference == 'dark' ? '#F3F4F6' : '#18181B')}
+		{/if}
 
 		<button
 			class="btn bg-zinc-900 dark:bg-gray-100 dark:text-zinc-900 font-worksans mr-4 mt-3 text-base md:text-2xl 2xl:text-4xl shadow-xl z-0 rounded-full m-auto"
