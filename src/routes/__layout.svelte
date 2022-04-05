@@ -3,7 +3,8 @@
 	import '../tailwind.css';
 	import Particles from 'svelte-particles';
 	import Icon from 'svelte-awesome/components/Icon.svelte';
-	import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+	import { faMoon } from '@fortawesome/free-solid-svg-icons/faMoon';
+	import { faSun } from '@fortawesome/free-solid-svg-icons/faSun';
 
 	const storageKey = 'user-theme';
 
