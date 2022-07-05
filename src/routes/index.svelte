@@ -31,7 +31,7 @@
 			</p>
 			<div>
 				<a
-					class="btn font-worksans mr-8 bg-zinc-900 dark:bg-gray-100 dark:text-zinc-900 text-base md:text-2xl 2xl:text-4xl shadow-xl"
+					class="btn font-worksans bg-zinc-900 dark:bg-gray-100 dark:text-zinc-900 text-base md:text-2xl 2xl:text-4xl shadow-xl"
 					href="https://blog.shriramsekar.tech"
 					target="_blank"
 					rel="noopener noreferrer"
@@ -43,6 +43,13 @@
 					target="_blank"
 					rel="noopener noreferrer"
 					>Github
+				</a>
+				<a 
+					class="btn font-worksans bg-zinc-900 dark:bg-gray-100 dark:text-zinc-900 text-base md:text-2xl 2xl:text-4xl shadow-xl"
+					href="https://rxresu.me/r/dMjYyoSx"
+					target="_blank"
+					rel="noopener noeferrer"
+				>Resume/CV
 				</a>
 			</div>
 		</div>
