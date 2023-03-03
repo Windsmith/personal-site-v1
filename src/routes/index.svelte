@@ -32,7 +32,7 @@
 			<div>
 				<a
 					class="btn font-worksans bg-zinc-900 dark:bg-gray-100 dark:text-zinc-900 text-base md:text-2xl 2xl:text-4xl shadow-xl"
-					href="https://blog.shriramsekar.tech"
+					href="https://blog.shriramsekar.me"
 					target="_blank"
 					rel="noopener noreferrer"
 					>Blog
@@ -44,12 +44,12 @@
 					rel="noopener noreferrer"
 					>Github
 				</a>
-				<a 
+				<a
 					class="btn font-worksans bg-zinc-900 dark:bg-gray-100 dark:text-zinc-900 text-base md:text-2xl 2xl:text-4xl shadow-xl"
 					href="https://rxresu.me/r/dMjYyoSx"
 					target="_blank"
 					rel="noopener noeferrer"
-				>Resume/CV
+					>Resume/CV
 				</a>
 			</div>
 		</div>
